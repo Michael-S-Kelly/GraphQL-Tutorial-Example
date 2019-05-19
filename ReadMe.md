@@ -2,9 +2,7 @@
 
 # GraphQL Real Estate Manager
 
-##### *Origional Author*
-
-##### *Authors*
+##### *Author*
 
 - [Michael S. Kelly](https://github.com/Michael-S-Kelly)
 
@@ -22,30 +20,37 @@ This C# web API is practice for a class final project.  It follows closely to th
 
 ```
 ------------------------------
-# Getting Started
-
+## Getting Started
+Clone this repository to your local machine.
+```
+$ git clone [https://github.com/Michael-S-Kelly/GraphQL-Tutorial-Example.git]
+```
 #### To run the program from Visual Studio:
 Select ```File``` -> ```Open``` -> ```Project/Solution```
 
 Next navigate to the location you cloned the Repository.
 
-Double click on the ``` ECommerce ``` directory.
+Double click on the ```RealEstateManager``` directory.
 
-Then select and open ``` EComerce.sln ```
+Then select and open ```RealEstateManager.sln ```
+
+------------------------------
 
 ------------------------------
 
 ## Visuals
 
+### NuGet Tools
 
-##### Application Start
-![Image 1](/Assets/Splash.png =550x)
+##### Microsoft.EntityFrameworkCore.Design
+![Image 1](/Assets/MicrosoftEntityFrameworkCoreDesign.PNG)
 
-##### Application Login
-![Image 2](/Assets/login.png =550x)
+##### Microsoft.EntityFrameworkCore.SqlServer
+![Image 2](/Assets/MicrosoftEntityFrameworkCoreSqlServer.PNG)
 
-##### Application Register
-![Image 3](/Assets/register.png =550x)
+##### Microsoft.Extensions.Configuration.Json
+![Image 3](/Assets/MicrosoftExtentsionsConfigurationJson.PNG)
+
 
 ------------------------------
 
