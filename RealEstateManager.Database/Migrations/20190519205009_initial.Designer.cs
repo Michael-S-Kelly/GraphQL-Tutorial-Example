@@ -10,7 +10,7 @@ using RealEstateManager.Database;
 namespace RealEstateManager.Database.Migrations
 {
     [DbContext(typeof(RealEstateContext))]
-    [Migration("20190519172622_initial")]
+    [Migration("20190519205009_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,7 @@ namespace RealEstateManager.Database.Migrations
 
                     b.Property<bool>("Paid");
 
-                    b.Property<int?>("PropertyId");
+                    b.Property<int>("PropertyId");
 
                     b.Property<decimal>("Value");
 
@@ -67,9 +67,10 @@ namespace RealEstateManager.Database.Migrations
 
             modelBuilder.Entity("RealEstateManager.Database.Models.Payment", b =>
                 {
-                    b.HasOne("RealEstateManager.Database.Models.Property")
+                    b.HasOne("RealEstateManager.Database.Models.Property", "Property")
                         .WithMany("Payments")
-                        .HasForeignKey("PropertyId");
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

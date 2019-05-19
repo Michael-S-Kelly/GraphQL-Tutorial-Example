@@ -35,7 +35,7 @@ namespace RealEstateManager.Database.Migrations
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateOverdue = table.Column<DateTime>(nullable: false),
                     Paid = table.Column<bool>(nullable: false),
-                    PropertyId = table.Column<int>(nullable: true)
+                    PropertyId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,7 +45,7 @@ namespace RealEstateManager.Database.Migrations
                         column: x => x.PropertyId,
                         principalTable: "Properties",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

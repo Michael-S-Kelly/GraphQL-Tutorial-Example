@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RealEstateManager.Database\RealEstateManager.Database.csproj" />
+    <ProjectReference Include="..\RealEstatManager.DataAccess\RealEstateManager.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
