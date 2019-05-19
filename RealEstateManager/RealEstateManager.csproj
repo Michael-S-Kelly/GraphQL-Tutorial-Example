@@ -6,12 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GraphiQL" Version="1.2.0" />
+    <PackageReference Include="GraphQL" Version="2.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RealEstateManager.Database\RealEstateManager.Database.csproj" />
+    <ProjectReference Include="..\RealEstateManager.Types\RealEstateManager.Types.csproj" />
+    <ProjectReference Include="..\RealEstateManager.Utilities\RealEstateManager.Utilities.csproj" />
+    <ProjectReference Include="..\RealEstatManager.DataAccess\RealEstateManager.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
