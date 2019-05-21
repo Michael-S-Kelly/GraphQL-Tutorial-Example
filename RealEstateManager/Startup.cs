@@ -10,10 +10,12 @@ using Microsoft.Extensions.DependencyInjection;
 using RealEstateManager.DataAccess.Repositories;
 using RealEstateManager.DataAccess.Repositories.Contracts;
 using RealEstateManager.Database;
+using RealEstateManager.Mutations;
 using RealEstateManager.Queries;
 using RealEstateManager.Schema;
 using RealEstateManager.Types;
 using RealEstateManager.Types.Payment;
+using RealEstateManager.Types.Property;
 
 namespace RealEstateManager
 {
@@ -37,7 +39,9 @@ namespace RealEstateManager
             services.AddDbContext<RealEstateContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:RealEstateDb"]));
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
             services.AddSingleton<PropertyQuery>();
+            services.AddSingleton<PropertyMutation>();
             services.AddSingleton<PropertyType>();
+            services.AddSingleton<PropertyInputType>();
             services.AddSingleton<PaymentType>();
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new RealEstateSchema(new FuncDependencyResolver(type => sp.GetService(type))));

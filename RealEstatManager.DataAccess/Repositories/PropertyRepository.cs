@@ -3,6 +3,7 @@ using RealEstateManager.Database;
 using RealEstateManager.Database.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RealEstateManager.DataAccess.Repositories
@@ -16,9 +17,21 @@ namespace RealEstateManager.DataAccess.Repositories
             _dbContext = dbContext;
         }
 
+        public Property Add(Property property)
+        {
+            _dbContext.Properties.Add(property);
+            _dbContext.SaveChanges();
+            return property;
+        }
+
         public IEnumerable<Property> GetAll()
         {
             return _dbContext.Properties;
+        }
+
+        public Property GetByID(int id)
+        {
+            return _dbContext.Properties.SingleOrDefault(x => x.Id == id);
         }
     }
 }

@@ -8,5 +8,7 @@ namespace RealEstateManager.DataAccess.Repositories.Contracts
     public interface IPropertyRepository
     {
         IEnumerable<Property> GetAll();
+        Property GetByID(int id);
+        Property Add(Property property);
     }
 }

@@ -11,6 +11,11 @@ namespace RealEstateManager.Queries
             Field<ListGraphType<PropertyType>>(
                 "properties",
                 resolve: context => propertyRepository.GetAll());
+
+            Field<PropertyType>(
+                "property",
+                arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "id" }),
+                resolve: context => propertyRepository.GetByID(context.GetArgument<int>("id")));
         }
     }
 }
